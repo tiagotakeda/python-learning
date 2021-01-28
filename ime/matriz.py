@@ -11,13 +11,12 @@ def cria_matriz(nLinhas, nColunas):
     
     return matriz
 
-
 def somaMatrizes(mA, mB, lin, col):
     soma = []
 
-    for i in range(0, lin-1):
+    for i in range(lin):
         linhas = []
-        for j in range(0, col-1):
+        for j in range(col):
             s = int(mA[i][j]) + int(mB[i][j])
             linhas.append(s)
         soma.append(linhas)
@@ -56,7 +55,7 @@ def main():
             soma = somaMatrizes(mA, mB, linhas, colunas)
 
             print("\nA soma das matrizes: \n")
-            for i in range(0, linhas-1):
+            for i in range(linhas):
                 print("\t", soma[i])      
                     
             print()
