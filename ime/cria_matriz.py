@@ -2,9 +2,9 @@ def cria(nLinhas, nColunas):
     matriz = []
     valor = 0
 
-    constante = input("A matriz é de valores constantes / homogênea? (Sim ou Não): ", end="")
+    constante = input("A matriz é de valores constantes / homogênea? (Sim ou Não): ")
     if(constante == "Sim" or constante == "S" or constante == "s" or constante == "sim"):
-        nula = input("É uma matriz nula? (Sim o Não): ", end="")
+        nula = input("É uma matriz nula? (Sim o Não): ")
 
         if(nula == "Sim" or nula == "sim" or nula == "s" or nula == "sim"):           
             for i in range(nLinhas):
@@ -13,7 +13,7 @@ def cria(nLinhas, nColunas):
                     linhas.append(valor)
                 matriz.append(linhas)
         else:
-            valor = input("Digite o valor dos elementos: ", end="")
+            valor = input("Digite o valor dos elementos: ")
             for i in range(nLinhas):
                 linhas = []
                 for j in range(nColunas):
