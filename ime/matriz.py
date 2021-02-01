@@ -1,27 +1,5 @@
-def cria_matriz(nLinhas, nColunas):
-    matriz = []
-    valor = 0
-    for i in range(nLinhas):
-        linhas = []
-        for j in range(nColunas):
-            print("Digite A[", i, "][", j, "]: ", sep="", end="")
-            valor = int(input())
-            linhas.append(valor)
-        matriz.append(linhas)
-    
-    return matriz
-
-def somaMatrizes(mA, mB, lin, col):
-    soma = []
-
-    for i in range(lin):
-        linhas = []
-        for j in range(col):
-            s = int(mA[i][j]) + int(mB[i][j])
-            linhas.append(s)
-        soma.append(linhas)
-
-    return soma
+import cria_matriz
+import somaMatrizes
 
 def main():
     print("Para proseguir escolha uma das opções: ")
@@ -35,7 +13,7 @@ def main():
         if modo == 1:
             linhas = int(input("Número de linhas: "))
             colunas = int(input("Número de colunas: "))
-            matriz = cria_matriz(linhas, colunas)
+            matriz = cria_matriz.cria(linhas, colunas)
 
             print("\nA matriz gerada foi: \n")
             for i in range(linhas):
@@ -47,12 +25,12 @@ def main():
             print("Defina a primeira matriz\n")
             linhas = int(input("Número de linhas: "))
             colunas = int(input("Número de colunas: "))
-            mA = cria_matriz(linhas, colunas)
+            mA = cria_matriz.cria(linhas, colunas)
 
             print("\nDefina a segunda matriz\n")
-            mB = cria_matriz(linhas, colunas)
+            mB = cria_matriz.cria(linhas, colunas)
 
-            soma = somaMatrizes(mA, mB, linhas, colunas)
+            soma = somaMatrizes.soma(mA, mB, linhas, colunas)
 
             print("\nA soma das matrizes: \n")
             for i in range(linhas):
@@ -64,7 +42,7 @@ def main():
         print("1) Impressão de uma simples matriz")
         print("2) Soma de duas matrizes")
         print("3) Digite qualquer outro número para sair do programa")
-        modo = int(input())
-    
+        modo = int(input())    
 
-main()
+if __name__ == '__main__':
+    main()
